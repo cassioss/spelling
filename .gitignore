@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# MacOS folder
+.DS_Store
+
+# IntelliJ/PyCharm folder
+.idea/
