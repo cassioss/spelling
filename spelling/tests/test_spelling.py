@@ -1,20 +1,27 @@
 import unittest
-from spelling.spelling_eng import *
+from spelling.spelling_eng import EnglishSpeller
 
 
 class TestSpelling(unittest.TestCase):
 
+    def setUp(self):
+        self.speller = EnglishSpeller()
+
+    def check_spelling(self, num, word):
+        self.assertEqual(word, self.speller.spell_out(num))
+
     def test_units(self):
-        self.assertEqual('zero',  spell_out_english(0))
-        self.assertEqual('one',   spell_out_english(1))
-        self.assertEqual('two',   spell_out_english(2))
-        self.assertEqual('three', spell_out_english(3))
-        self.assertEqual('four',  spell_out_english(4))
-        self.assertEqual('five',  spell_out_english(5))
-        self.assertEqual('six',   spell_out_english(6))
-        self.assertEqual('seven', spell_out_english(7))
-        self.assertEqual('eight', spell_out_english(8))
-        self.assertEqual('nine',  spell_out_english(9))
+        self.check_spelling(0, 'zero')
+        self.check_spelling(1, 'one')
+        self.check_spelling(2, 'two')
+        self.check_spelling(3, 'three')
+        self.check_spelling(4, 'four')
+        self.check_spelling(5, 'five')
+        self.check_spelling(6, 'six')
+        self.check_spelling(7, 'seven')
+        self.check_spelling(8, 'eight')
+        self.check_spelling(9, 'nine')
+
 
 if __name__ == '__main__':
     unittest.main()
